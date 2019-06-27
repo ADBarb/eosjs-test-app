@@ -1,0 +1,19 @@
+{
+  "name": "eosjs-test-app",
+  "version": "0.1",
+  "author": "ADBarb",
+  "dependencies": {
+    "eosjs": "20.0.0",
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "jest": "^23.4.1",
+    "jest-fetch-mock": "^1.6.6",
+    "jest-junit": "^5.1.0"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "test:unit": "npm run test"
+  }
+}

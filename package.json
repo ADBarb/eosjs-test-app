@@ -3,8 +3,10 @@
   "version": "0.1",
   "author": "ADBarb",
   "dependencies": {
+    "babel-eslint": "^9.0.0",
     "eosjs": "20.0.0",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-native-eos": "1.0.0"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",

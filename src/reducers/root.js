@@ -7,7 +7,11 @@ import {
   isLoadingBlocks,
 } from './blocks';
 
-export default combineReducers({
+const blockReducers = combineReducers({
   blocks,
   isLoadingBlocks,
+});
+
+export default combineReducers({
+  block: blockReducers,
 });

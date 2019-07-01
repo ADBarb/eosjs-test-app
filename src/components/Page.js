@@ -3,10 +3,12 @@
  */
 import React from 'react';
 import bemmit from 'bemmit';
+import { connect } from 'react-redux';
 import {
   Button,
   Loading,
 } from 'carbon-components-react';
+import * as Actions from '../actions/blocks';
 import Block from './Block';
 
 export const getClass = bemmit('page');
@@ -15,40 +17,32 @@ class Page extends React.Component {
   constructor(props) {
     super(props);
     this.fetchBlocks = this.fetchBlocks.bind(this);
-
-    this.state = {
-      blockInfo: {},
-    };
   }
 
   fetchBlocks() {
     console.log('Clicked fetchBlocks');
-    this.setState({
-      blockInfo: {
-        blockOne: "Info",
-      }
-    });
+    this.props.dispatch(Actions.fetchBlocks());
   }
 
-  renderBlocks(info) {
-    if (!info) {
+  renderBlocks() {
+    const { blocks } = this.props;
+    if (blocks && blocks.length === 0) {
       return '';
     }
 
-    return Object.keys(info).length !== 0
-      ? (
-        <Block
-          info={info}
-        />
-      )
-      : '';
+    return blocks.map((block) => {
+      const info = { 
+        id: block.chain_id || '-',
+      };
+      return (
+        <Block info={info}/>
+      );
+    });
   }
 
   render() {
-    const { isLoadingBlocks } = this.props;
-    const { blockInfo } = this.state;
-
-    const loadingIndicator = isLoadingBlock
+    const { isLoading } = this.props;
+    const loadingIndicator = isLoading
       ? (
         <Loading withOverlay={false} />
       )
@@ -56,7 +50,7 @@ class Page extends React.Component {
 
     return (
       <div className={getClass()}>
-        {this.renderBlocks(blockInfo)}
+        {this.renderBlocks()}
         <Button onClick={this.fetchBlocks}>
           Load
         </Button>
@@ -66,4 +60,16 @@ class Page extends React.Component {
   }
 }
 
-export default Page;
+const mapStateToProps = (state = {}) => {
+  const { block } = state;
+  const {
+    blocks,
+    isLoadingBlocks,
+  } = block;
+
+  return {
+    blocks,
+    isLoading: isLoadingBlocks,
+  };
+}
+export default connect(mapStateToProps)(Page);

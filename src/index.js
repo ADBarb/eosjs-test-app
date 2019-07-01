@@ -11,11 +11,13 @@ import './styles/index.scss';
 
 export const getClass = bemmit('main-container');
 
+export const pageTitle = "Test EOS Application";
+
 const store = configureStore(process.env.NODE_ENV);
 const provider = (
   <Provider store={store}>
     <div className={getClass()}>
-      <Page/>
+      <Page title={pageTitle}/>
     </div>
   </Provider>
 );

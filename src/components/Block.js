@@ -20,7 +20,7 @@ class Block extends React.Component {
       info
     } = this.props;
 
-    console.log(info);
+    console.log('Block info:', info);
 
     return (
       <div className={getClass()}>

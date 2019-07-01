@@ -2,6 +2,12 @@
   "name": "eosjs-test-app",
   "version": "1.0.0",
   "author": "ADBarb",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
   "dependencies": {
     "babel-eslint": "^9.0.0",
     "bemmit": "^1.0.4",
@@ -11,13 +17,17 @@
     "node-sass": "^4.12.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
-    "react-native-eos": "1.0.0",
+    "react-native-eosjs": "1.0.0",
     "react-redux": "6.0.0",
     "redux": "4.0.1",
     "redux-api-middleware": "3.0.1",
     "redux-thunk": "2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "enzyme": "^3.3.0",
     "jest": "^23.4.1",
     "jest-fetch-mock": "^1.6.6",

@@ -7,9 +7,8 @@
 @import './components/block';
 @import './components/page';
 
-main {
-  .main-container {
-    background-color: $color__grey;
-    width: 100%;
-  }
+.main-container {
+  height: 42rem;
+  padding: 1rem;
+  width: 100%;
 }

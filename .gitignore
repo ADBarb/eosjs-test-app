@@ -5,6 +5,5 @@ coverage
 
 # Directories
 /build
-.npm
 /node_modules
 

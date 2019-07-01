@@ -1,25 +1,42 @@
 {
   "name": "eosjs-test-app",
-  "version": "0.1",
+  "version": "1.0.0",
   "author": "ADBarb",
   "dependencies": {
     "babel-eslint": "^9.0.0",
+    "bemmit": "^1.0.4",
     "carbon-components": "10.3.2",
     "carbon-components-react": "7.3.2",
     "eosjs": "20.0.0",
-    "react": "^16.2.0",
-    "react-native-eos": "1.0.0"
+    "node-sass": "^4.12.0",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-native-eos": "1.0.0",
+    "react-redux": "6.0.0",
+    "redux": "4.0.1",
+    "redux-api-middleware": "3.0.1",
+    "redux-thunk": "2.3.0"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "jest": "^23.4.1",
     "jest-fetch-mock": "^1.6.6",
-    "jest-junit": "^5.1.0"
+    "jest-junit": "^5.1.0",
+    "react-native": "^0.41.2",
+    "react-scripts": "^2.1.8",
+    "redux-logger": "3.0.6",
+    "webpack": "4.28.3",
+    "webpack-dev-server": "3.1.14"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "test": "jest --coverage",
-    "test:unit": "npm run test"
-  }
+    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -20,7 +20,6 @@ class Page extends React.Component {
   }
 
   fetchBlocks() {
-    console.log('Clicked fetchBlocks');
     this.props.dispatch(Actions.getInfo());
   }
 
@@ -43,7 +42,12 @@ class Page extends React.Component {
   render() {
     const { isLoading, title } = this.props;
     const titleDiv = title ? (<div className={getClass('title')}>{title}</div>) : '';
-    const loadingIndicator = isLoading ? (<Loading withOverlay={false} />) : '';
+    const loadingIndicator = isLoading
+      ? (
+        <Loading className={getClass('loader')} small withOverlay={false} />
+      )
+      : '';
+    const loadingText = isLoading ? "Loading..." : "Load";
 
     return (
       <div className={getClass()}>
@@ -51,9 +55,10 @@ class Page extends React.Component {
         <div className={getClass('loading-section')}>
           <Button
             className={getClass('button')}
+            disabled={isLoading}
             onClick={this.fetchBlocks}
           >
-            Load
+            {loadingText}
           </Button>
           {loadingIndicator}
         </div>

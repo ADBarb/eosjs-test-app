@@ -1,6 +1,15 @@
 .page {
   width: max-content;
 
+  &__loading-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__loader {
+    margin: .5rem;
+  }
+
   &__title {
     font-size: 2rem;
     font-weight: 600;

@@ -1,0 +1,19 @@
+.info {
+  display: table-row;
+  padding-top: .25rem;
+
+  &__info {
+    display: table-cell;
+    font-size: .875rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__label {
+    display: table-cell;
+    font-size: .875rem;
+    font-weight: 600;
+    min-width: fit-content;
+    padding-right: 2rem;
+  }
+}

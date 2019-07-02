@@ -1,13 +1,17 @@
 .page {
   width: max-content;
 
-  &__loading-section {
-    display: flex;
-    flex-direction: row;
+  &__blocks {
+    margin-top: 2rem;
   }
 
   &__loader {
     margin: .5rem;
+  }
+
+  &__loading-section {
+    display: flex;
+    flex-direction: row;
   }
 
   &__title {

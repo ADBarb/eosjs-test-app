@@ -1,11 +1,12 @@
 // Import carbon components library stylesheets from Node Modules
+@import '../../node_modules/carbon-components/scss/components/accordion/accordion';
 @import '../../node_modules/carbon-components/scss/components/button/button';
 @import '../../node_modules/carbon-components/scss/components/loading/loading';
-@import '../../node_modules/carbon-components/scss/components/tile/tile';
 
 // Import self made stylesheets
 @import './colors';
 @import './components/block';
+@import './components/info';
 @import './components/page';
 
 .main-container {

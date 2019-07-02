@@ -1,3 +1,12 @@
 .block {
-  width: max-content;
+  &.bx--tile {
+    min-height: 5rem;
+    width: 10rem;
+  }
+
+  &.bx--tile-content {
+    &__below-the-fold {
+      margin-top: 1rem;
+    }
+  }
 }

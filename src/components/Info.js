@@ -10,7 +10,8 @@ export default function Info({
   label,
   info,
 }) {
-  const key = `${label}:` || 'Info:'
+  const noLabel = typeof label === 'undefined' || label === '';
+  const key =  noLabel ? 'Info:' : `${label}:`;
   const value = info || '-';
   return (
     <div className={getClass()}>

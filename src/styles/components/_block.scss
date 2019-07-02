@@ -1,12 +1,9 @@
 .block {
-  &.bx--tile {
-    min-height: 5rem;
-    width: 10rem;
+  &__expanded {
+    margin-top: 1rem;
   }
+}
 
-  &.bx--tile-content {
-    &__below-the-fold {
-      margin-top: 1rem;
-    }
-  }
+.bx--accordion__title {
+  margin-right: .5rem;
 }

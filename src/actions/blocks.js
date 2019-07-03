@@ -41,5 +41,6 @@ export const fetchBlocks = (num = 10) => (dispatch) => {
     }
   }).catch((error) => {
     console.log('Error in get_info: ', error);
+    dispatch(loadingBlocks(false));
   });
 }

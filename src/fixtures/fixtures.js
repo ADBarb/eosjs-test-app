@@ -1,0 +1,17 @@
+module.exports.testBlockData = {
+  "action_mroot": "cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f",
+  "block_extensions": [],
+  "block_num": 1,
+  "confirmed": 1,
+  "header_extensions": [],
+  "id": "00000001bcf2f448225d099685f14da76803028926af04d2607eafcf609c265c",
+  "new_producers": null,
+  "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+  "producer": "",
+  "producer_signature": "SIG_K1_111111111111111111111111111111111111111111111111111111111111111116uk5ne",
+  "ref_block_prefix": 2517196066,
+  "schedule_version": 0,
+  "timestamp": "2018-06-01T12:00:00.000",
+  "transaction_mroot": "0000000000000000000000000000000000000000000000000000000000000000",
+  "transactions": [],
+};

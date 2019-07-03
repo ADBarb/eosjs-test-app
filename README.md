@@ -6,7 +6,7 @@ Web application using EOS blockchains
 - [npm](https://www.npmjs.com/): 6.4.0
 
 ## Resources
-- [eos-js](https://github.com/EOSIO/eosjs)
+- [EOSIO/eosjs](https://github.com/EOSIO/eosjs) repository
 - [EOS API Spec documentation](https://developers.eos.io/eosio-nodeos/reference)
 - EOS API endpoint used: https://api.eosnewyork.io/
 

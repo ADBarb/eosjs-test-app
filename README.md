@@ -7,6 +7,7 @@ Web application using EOS blockchains
 
 ## Resources
 - [EOSIO/eosjs](https://github.com/EOSIO/eosjs) repository
+  - [Examples of API calls from repo](https://github.com/EOSIO/eosjs/blob/master/docs/4.-Reading%20blockchain-Examples.md)
 - [EOS API Spec documentation](https://developers.eos.io/eosio-nodeos/reference)
 - EOS API endpoint used: https://api.eosnewyork.io/
 

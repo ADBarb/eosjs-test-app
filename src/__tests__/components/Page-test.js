@@ -1,5 +1,5 @@
-/** 
- * Test file for components/Block.js
+/**
+ * Test file for components/Page.js
  */
 import React from 'react';
 import sinon from 'sinon';
@@ -33,18 +33,19 @@ const getStore = (state) => {
 
 const renderPage = (store, props) => shallow(
   <Provider store={store}>
-      <Page store={store} {...props} />
+    <Page store={store} {...props} />
   </Provider>
 );
 
 describe('Component: Page', () => {
   let wrapper;
   let store;
-
+  const testTitle = 'test';
+  
   beforeEach(() => {
     sandbox.resetHistory();
     store = getStore(initialState);
-    wrapper = renderPage(store, {title: 'test'}).dive();
+    wrapper = renderPage(store, {title: testTitle}).dive();
   });
 
   afterAll(() => {
@@ -53,5 +54,13 @@ describe('Component: Page', () => {
 
   it('should render without exploding', () => {
     expect(wrapper.length).toEqual(1);
+  });
+
+  it('should render Page as a connected component', () => {
+    expect(wrapper.find('Connect(Page)').length).toEqual(1);
+  });
+
+  it('should render with test title', () => {
+    expect(wrapper.props().title).toEqual(testTitle);
   });
 });

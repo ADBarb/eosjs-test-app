@@ -11,7 +11,10 @@ import {
   CodeSnippet,
 } from 'carbon-components-react';
 import Info from './Info';
-import { copyToClipboard } from '../utils';
+import {
+  copyToClipboard,
+  replaceParser,
+} from '../utils';
 
 export const getClass = bemmit('block');
 
@@ -31,22 +34,7 @@ export default function Block({ data }) {
     </div>
   );
 
-  const replacer = (name, val) => {
-    if (Array.isArray(val)) {
-      return val.map((v) => {
-        if (typeof v === 'object') {
-          const oneLiner = Object.entries(v).map((e) => {
-            return e.join(': ');
-          }).join(', ');
-          return `{ ${oneLiner} }`;
-        }
-        return v;
-      });
-    }
-    return val;
-  };
-
-  const blockData = JSON.stringify(data, replacer, 2);
+  const blockData = JSON.stringify(data, replaceParser, 2);
 
   return (
     <div className={getClass()}>

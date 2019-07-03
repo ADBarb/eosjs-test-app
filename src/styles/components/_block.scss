@@ -1,9 +1,22 @@
 .block {
+  width: 100%;
+
   &__expanded {
     margin-top: 1rem;
   }
+
+  &__output {
+    max-height: fit-content;
+    max-width: 54rem;
+  }
 }
 
-.bx--accordion__title {
-  margin-right: .5rem;
+.bx--accordion {
+  &__content {
+    padding-right: 0;
+  }
+
+  &__title {
+    margin-right: .5rem;
+  }
 }

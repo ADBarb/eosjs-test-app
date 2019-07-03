@@ -5,6 +5,7 @@ import React from 'react';
 import bemmit from 'bemmit';
 import { connect } from 'react-redux';
 import {
+  Accordion,
   Button,
   Loading,
 } from 'carbon-components-react';
@@ -20,23 +21,28 @@ class Page extends React.Component {
   }
 
   fetchBlocks() {
-    this.props.dispatch(Actions.getInfo());
+    this.props.dispatch(Actions.fetchBlocks());
   }
 
   renderBlocks() {
-    const { blocks } = this.props;
-    if (blocks && blocks.length === 0) {
+    const { isLoading, blocks } = this.props;
+    if ((blocks && blocks.length === 0) || isLoading) {
       return '';
     }
-
-    return blocks.map((block) => {
-      const info = { 
-        id: block.chain_id || '-',
-      };
-      return (
-        <Block info={info}/>
-      );
+    const blockComponents = blocks.map((block, i) => {
+      if (block) {
+        return (
+          <Block key={i} data={block}/>
+        );
+      }
+      return '';
     });
+
+    return (
+      <Accordion className={getClass('blocks')}>
+        {blockComponents}
+      </Accordion>
+    );
   }
 
   render() {

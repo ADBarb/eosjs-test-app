@@ -1,6 +1,7 @@
 // Import carbon components library stylesheets from Node Modules
 @import '../../node_modules/carbon-components/scss/components/accordion/accordion';
 @import '../../node_modules/carbon-components/scss/components/button/button';
+@import '../../node_modules/carbon-components/scss/components/code-snippet/code-snippet';
 @import '../../node_modules/carbon-components/scss/components/loading/loading';
 
 // Import self made stylesheets
@@ -11,6 +12,7 @@
 
 .main-container {
   height: 42rem;
+  min-height: fit-content;
   padding: 1rem;
   width: 100%;
 }

@@ -5,9 +5,15 @@ Web application using EOS blockchains
 - [Node.js](https://nodejs.org/): 8.15.1
 - [npm](https://www.npmjs.com/): 6.4.0
 
+## Resources
+- [eos-js](https://github.com/EOSIO/eosjs)
+- [EOS API Spec documentation](https://developers.eos.io/eosio-nodeos/reference)
+- EOS API endpoint used: https://api.eosnewyork.io/
+
 ## Running the Application
 1. Clone repo
 2. Run `npm install`
-3. Running the build:
-  - For Dev, start app in http://localhost:3000/ using command `npm start` (Currently working locally only)
-  - For Prod build run `npm run build` to construct the build folder, which can be hosted on a server
+3. Start app in http://localhost:3000/ using command `npm start`
+
+# Unit Tests
+Run `npm run test` to run all tests underneath the `__test__` folder

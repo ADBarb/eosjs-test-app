@@ -9,7 +9,7 @@ import {
   Button,
   Loading,
 } from 'carbon-components-react';
-import * as Actions from '../actions/blocks';
+import * as BlockActions from '../actions/blocks';
 import Block from './Block';
 
 export const getClass = bemmit('page');
@@ -21,7 +21,7 @@ class Page extends React.Component {
   }
 
   fetchBlocks() {
-    this.props.dispatch(Actions.fetchBlocks());
+    this.props.dispatch(BlockActions.fetchBlocks());
   }
 
   renderBlocks() {

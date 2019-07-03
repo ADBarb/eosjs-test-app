@@ -4,7 +4,10 @@
 import React from 'react';
 import sinon from 'sinon';
 import Adapter from 'enzyme-adapter-react-16';
-import { shallow, configure } from 'enzyme';
+import {
+  configure,
+  shallow,
+} from 'enzyme';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import * as BlockActions from '../../actions/blocks';
@@ -33,7 +36,7 @@ const getStore = (state) => {
 
 const renderPage = (store, props) => shallow(
   <Provider store={store}>
-    <Page store={store} {...props} />
+    <Page {...props} />
   </Provider>
 );
 
@@ -45,7 +48,7 @@ describe('Component: Page', () => {
   beforeEach(() => {
     sandbox.resetHistory();
     store = getStore(initialState);
-    wrapper = renderPage(store, {title: testTitle}).dive();
+    wrapper = renderPage(store, {title: testTitle});
   });
 
   afterAll(() => {
@@ -56,11 +59,15 @@ describe('Component: Page', () => {
     expect(wrapper.length).toEqual(1);
   });
 
+  it('should set the classes for the wrapper', () => {
+    expect(wrapper.render().hasClass(getClass())).toEqual(true);
+  });
+
   it('should render Page as a connected component', () => {
     expect(wrapper.find('Connect(Page)').length).toEqual(1);
   });
 
   it('should render with test title', () => {
-    expect(wrapper.props().title).toEqual(testTitle);
+    expect(wrapper.dive().props().title).toEqual(testTitle);
   });
 });

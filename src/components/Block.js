@@ -30,7 +30,7 @@ export default function Block({ data }) {
     <div className={getClass('basic-info')}>
       <Info label="ID" info={id}/>
       <Info label="Timestamp" info={timestamp} />
-      <Info label="Actions" info={actionCount} />
+      <Info label="Transactions" info={actionCount} />
     </div>
   );
 

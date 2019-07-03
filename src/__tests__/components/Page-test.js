@@ -70,4 +70,11 @@ describe('Component: Page', () => {
   it('should render with test title', () => {
     expect(wrapper.dive().props().title).toEqual(testTitle);
   });
+
+  describe('fetchBlocks', () => {
+    it('should hit sinon stub when called', () => {
+      BlockActions.fetchBlocks();
+      expect(fetchStub.callCount).toEqual(1);
+    });
+  });
 });

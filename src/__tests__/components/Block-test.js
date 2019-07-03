@@ -7,7 +7,7 @@ import { shallow, configure } from 'enzyme';
 import Block, {
   getClass,
 } from '../../components/Block';
-import { testBlockData } from '../../fixtures/fixtures';
+import { testBlockData } from '../../fixtures/blocks';
 
 configure({ adapter: new Adapter() });
 const renderBlock = props => shallow(<Block {...props}/>);
@@ -35,6 +35,20 @@ describe('Component: Block', () => {
           .find(`.${getClass('expanded')}`)
           .length
         ).toEqual(1);
+      });
+
+      describe('CodeSnippet', () => {
+        const codeSnippet = wrapper.find(`.${getClass('expanded')}`).find('CodeSnippet');
+        it('should render with expected props', () => {
+          expect(codeSnippet.props()).toMatchObject({
+            ariaLabel: "Block information",
+            className: getClass('output'),
+            copyButtonDescription: "Copy Block info",
+            copyLabel: "Copy Block info",
+            onClick: expect.any(Function),
+            type: "multi"
+          });
+        });
       });
     });
   });

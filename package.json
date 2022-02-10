@@ -14,7 +14,7 @@
     "carbon-components": "10.3.2",
     "carbon-components-react": "7.3.2",
     "eosjs": "20.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-native-eosjs": "1.0.0",
